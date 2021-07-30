@@ -19,6 +19,8 @@
 		FC2D145526B426CD007BC944 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D142626B426CB007BC944 /* Persistence.swift */; };
 		FC2D145626B426CD007BC944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2D142726B426CD007BC944 /* Assets.xcassets */; };
 		FC2D145726B426CD007BC944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2D142726B426CD007BC944 /* Assets.xcassets */; };
+		FC2D146A26B4286F007BC944 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* GameScene.swift */; };
+		FC2D146B26B4286F007BC944 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		FC2D144726B426CD007BC944 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2D144B26B426CD007BC944 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		FC2D144D26B426CD007BC944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC2D146926B4286F007BC944 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 			children = (
 				FC2D142426B426CB007BC944 /* nomikopApp.swift */,
 				FC2D142526B426CB007BC944 /* ContentView.swift */,
+				FC2D146926B4286F007BC944 /* GameScene.swift */,
 				FC2D142626B426CB007BC944 /* Persistence.swift */,
 				FC2D142726B426CD007BC944 /* Assets.xcassets */,
 				FC2D142226B426CB007BC944 /* nomikop.xcdatamodeld */,
@@ -316,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2D146A26B4286F007BC944 /* GameScene.swift in Sources */,
 				FC2D144E26B426CD007BC944 /* nomikop.xcdatamodeld in Sources */,
 				FC2D145426B426CD007BC944 /* Persistence.swift in Sources */,
 				FC2D145026B426CD007BC944 /* nomikopApp.swift in Sources */,
@@ -327,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2D146B26B4286F007BC944 /* GameScene.swift in Sources */,
 				FC2D144F26B426CD007BC944 /* nomikop.xcdatamodeld in Sources */,
 				FC2D145526B426CD007BC944 /* Persistence.swift in Sources */,
 				FC2D145126B426CD007BC944 /* nomikopApp.swift in Sources */,
