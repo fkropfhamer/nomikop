@@ -19,12 +19,14 @@
 		FC2D145526B426CD007BC944 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D142626B426CB007BC944 /* Persistence.swift */; };
 		FC2D145626B426CD007BC944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2D142726B426CD007BC944 /* Assets.xcassets */; };
 		FC2D145726B426CD007BC944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2D142726B426CD007BC944 /* Assets.xcassets */; };
-		FC2D146A26B4286F007BC944 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* GameScene.swift */; };
-		FC2D146B26B4286F007BC944 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* GameScene.swift */; };
+		FC2D146A26B4286F007BC944 /* OutsideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* OutsideScene.swift */; };
+		FC2D146B26B4286F007BC944 /* OutsideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* OutsideScene.swift */; };
 		FCE7369C26B7171700C7C71A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7369B26B7171700C7C71A /* GameState.swift */; };
 		FCE7369D26B7171700C7C71A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7369B26B7171700C7C71A /* GameState.swift */; };
 		FCE7369F26B71A0700C7C71A /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7369E26B71A0700C7C71A /* GameController.swift */; };
 		FCE736A026B71A0700C7C71A /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7369E26B71A0700C7C71A /* GameController.swift */; };
+		FCE736A226B72C8200C7C71A /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE736A126B72C8200C7C71A /* FightScene.swift */; };
+		FCE736A326B72C8200C7C71A /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE736A126B72C8200C7C71A /* FightScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +63,10 @@
 		FC2D144726B426CD007BC944 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2D144B26B426CD007BC944 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		FC2D144D26B426CD007BC944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC2D146926B4286F007BC944 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		FC2D146926B4286F007BC944 /* OutsideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutsideScene.swift; sourceTree = "<group>"; };
 		FCE7369B26B7171700C7C71A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		FCE7369E26B71A0700C7C71A /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		FCE736A126B72C8200C7C71A /* FightScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +118,8 @@
 			children = (
 				FC2D142426B426CB007BC944 /* nomikopApp.swift */,
 				FC2D142526B426CB007BC944 /* ContentView.swift */,
-				FC2D146926B4286F007BC944 /* GameScene.swift */,
+				FC2D146926B4286F007BC944 /* OutsideScene.swift */,
+				FCE736A126B72C8200C7C71A /* FightScene.swift */,
 				FCE7369E26B71A0700C7C71A /* GameController.swift */,
 				FCE7369B26B7171700C7C71A /* GameState.swift */,
 				FC2D142626B426CB007BC944 /* Persistence.swift */,
@@ -328,9 +332,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC2D146A26B4286F007BC944 /* GameScene.swift in Sources */,
+				FC2D146A26B4286F007BC944 /* OutsideScene.swift in Sources */,
 				FCE7369C26B7171700C7C71A /* GameState.swift in Sources */,
 				FC2D144E26B426CD007BC944 /* nomikop.xcdatamodeld in Sources */,
+				FCE736A226B72C8200C7C71A /* FightScene.swift in Sources */,
 				FC2D145426B426CD007BC944 /* Persistence.swift in Sources */,
 				FC2D145026B426CD007BC944 /* nomikopApp.swift in Sources */,
 				FC2D145226B426CD007BC944 /* ContentView.swift in Sources */,
@@ -342,9 +347,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC2D146B26B4286F007BC944 /* GameScene.swift in Sources */,
+				FC2D146B26B4286F007BC944 /* OutsideScene.swift in Sources */,
 				FCE7369D26B7171700C7C71A /* GameState.swift in Sources */,
 				FC2D144F26B426CD007BC944 /* nomikop.xcdatamodeld in Sources */,
+				FCE736A326B72C8200C7C71A /* FightScene.swift in Sources */,
 				FC2D145526B426CD007BC944 /* Persistence.swift in Sources */,
 				FC2D145126B426CD007BC944 /* nomikopApp.swift in Sources */,
 				FC2D145326B426CD007BC944 /* ContentView.swift in Sources */,

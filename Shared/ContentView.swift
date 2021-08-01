@@ -10,11 +10,15 @@ import CoreData
 import SpriteKit
 
 struct ContentView: View {
+    @StateObject var gameState = GameState()
+    
     var scene: SKScene {
-        let scene = GameScene()
-        scene.scaleMode = .resizeFill
-        
-        return scene
+        switch gameState.mode {
+        case GameMode.outside:
+            return OutsideScene(gameState: gameState)
+        case .fight:
+            return FightScene(gameState: gameState)
+        }
     }
     
     var body: some View {

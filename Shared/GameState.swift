@@ -7,10 +7,19 @@
 
 import Foundation
 
-class GameState {
+enum GameMode {
+    case outside
+    case fight
+}
+
+class GameState : ObservableObject {
     var position: CGPoint
+    
+    @Published var mode: GameMode
+    
     
     init() {
         position = CGPoint(x: 0, y: 0)
+        mode = GameMode.outside
     }
 }
