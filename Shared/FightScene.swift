@@ -38,7 +38,9 @@ class FightScene: SKScene {
         coverSprite.run(fadeOutAction)
     }
     
+    #if os(macOS)
     override func keyDown(with event: NSEvent) {
         gameState.mode = .outside
     }
+    #endif
 }

@@ -53,6 +53,7 @@ class OutsideScene: SKScene {
         //print("update")
     }
     
+    #if os(macOS)
     override func keyDown(with event: NSEvent) {
         if let key = event.characters {
             switch key {
@@ -74,31 +75,32 @@ class OutsideScene: SKScene {
                 break
             }
         }
-        
-        func moveUp() {
-            print("up")
-            let action = SKAction.moveBy(x: 0, y: -32, duration: 0.1)
-            label!.run(action);
-            background!.run(action)
-        }
-        
-        func moveDown() {
-            let action = SKAction.moveBy(x: 0, y: 32, duration: 0.1)
-            label!.run(action)
-            background!.run(action)
-            gameState.position.y -= 1
-        }
-        
-        func moveRight() {
-            let action = SKAction.moveBy(x: -32, y: 0, duration: 0.1)
-            label!.run(action)
-            background!.run(action)
-        }
-        
-        func moveLeft() {
-            let action = SKAction.moveBy(x: 32, y: 0, duration: 0.1)
-            label!.run(action)
-            background!.run(action)
-        }
+    }
+    #endif
+    
+    func moveUp() {
+        print("up")
+        let action = SKAction.moveBy(x: 0, y: -32, duration: 0.1)
+        label!.run(action);
+        background!.run(action)
+    }
+    
+    func moveDown() {
+        let action = SKAction.moveBy(x: 0, y: 32, duration: 0.1)
+        label!.run(action)
+        background!.run(action)
+        gameState.position.y -= 1
+    }
+    
+    func moveRight() {
+        let action = SKAction.moveBy(x: -32, y: 0, duration: 0.1)
+        label!.run(action)
+        background!.run(action)
+    }
+    
+    func moveLeft() {
+        let action = SKAction.moveBy(x: 32, y: 0, duration: 0.1)
+        label!.run(action)
+        background!.run(action)
     }
 }

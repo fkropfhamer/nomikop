@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 enum GameMode {
     case outside
