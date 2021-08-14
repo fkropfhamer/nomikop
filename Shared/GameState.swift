@@ -21,6 +21,6 @@ class GameState : ObservableObject {
     
     init() {
         position = CGPoint(x: 0, y: 0)
-        mode = GameMode.outside
+        mode = GameMode.fight
     }
 }

@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  OutsideScene.swift
 //  nomikop
 //
 //  Created by Fabian Kropfhamer on 30.07.21.
@@ -13,10 +13,11 @@ class OutsideScene: SKScene {
     var label: SKLabelNode?
     var background: SKSpriteNode?
     var gameState: GameState
-    var controller: GameController?
+    var gameController: GameController
     
     init(gameState: GameState) {
         self.gameState = gameState
+        self.gameController = GameController(state: gameState)
         super.init(size: CGSize(width: 0, height: 0))
         
         scaleMode = .resizeFill
