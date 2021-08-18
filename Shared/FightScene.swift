@@ -15,9 +15,9 @@ class FightScene: SKScene {
     
     init(gameState: GameState) {
         self.gameState = gameState
-        super.init(size: CGSize(width: 0, height: 0))
+        super.init(size: CGSize(width: 1000, height: 700))
         
-        scaleMode = .resizeFill
+        scaleMode = .aspectFit
     }
     
     required init?(coder aDecoder: NSCoder) {
