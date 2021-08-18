@@ -7,8 +7,14 @@
 
 import Foundation
 
+enum FightMenu {
+    case Action
+    case Attack
+}
+
 struct FightState {
     var isProcessing = true;
     var playerCreature = Creature(name: "PlayerCreature", attacks: [], health: 100, maxHealth: 500)
     var enemyCreatuer = Creature(name: "Enemy", attacks: [], health: 500, maxHealth: 100)
+    var menu = FightMenu.Action
 }
