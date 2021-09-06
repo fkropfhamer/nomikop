@@ -93,9 +93,18 @@ class FightScene: SKScene {
     func createAttackMenu() -> SKSpriteNode {
         let attackMenu = SKSpriteNode(color: .darkGray, size: CGSize(width: 250, height: 100))
         
-        let attackAction = SKLabelNode(text: "Attack")
+        let attackAction1 = SKLabelNode(text: state.playerCreature.attacks[0].name)
+        attackAction1.position = CGPoint(x: 0, y: 50)
+        let attackAction2 = SKLabelNode(text: state.playerCreature.attacks[1].name)
+        let attackAction3 = SKLabelNode(text: state.playerCreature.attacks[2].name)
+        attackAction3.position = CGPoint(x: 0, y: -50)
+        let attackAction4 = SKLabelNode(text: state.playerCreature.attacks[3].name)
+        attackAction4.position = CGPoint(x: 0, y: -100)
         
-        attackMenu.addChild(attackAction)
+        attackMenu.addChild(attackAction1)
+        attackMenu.addChild(attackAction2)
+        attackMenu.addChild(attackAction3)
+        attackMenu.addChild(attackAction4)
         
         return attackMenu
     }

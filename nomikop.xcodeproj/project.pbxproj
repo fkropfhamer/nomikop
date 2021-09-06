@@ -21,6 +21,8 @@
 		FC2D145726B426CD007BC944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2D142726B426CD007BC944 /* Assets.xcassets */; };
 		FC2D146A26B4286F007BC944 /* OutsideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* OutsideScene.swift */; };
 		FC2D146B26B4286F007BC944 /* OutsideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2D146926B4286F007BC944 /* OutsideScene.swift */; };
+		FC4FE16626E6AC81007671AD /* Attack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FE16526E6AC81007671AD /* Attack.swift */; };
+		FC4FE16726E6AC81007671AD /* Attack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FE16526E6AC81007671AD /* Attack.swift */; };
 		FCCE33FC26C85E7B00B9551D /* FightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE33FB26C85E7B00B9551D /* FightState.swift */; };
 		FCCE33FD26C85E7B00B9551D /* FightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE33FB26C85E7B00B9551D /* FightState.swift */; };
 		FCCE33FF26C8615100B9551D /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE33FE26C8615100B9551D /* Creature.swift */; };
@@ -70,6 +72,7 @@
 		FC2D144B26B426CD007BC944 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		FC2D144D26B426CD007BC944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC2D146926B4286F007BC944 /* OutsideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutsideScene.swift; sourceTree = "<group>"; };
+		FC4FE16526E6AC81007671AD /* Attack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attack.swift; sourceTree = "<group>"; };
 		FCCE33FB26C85E7B00B9551D /* FightState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightState.swift; sourceTree = "<group>"; };
 		FCCE33FE26C8615100B9551D /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		FCCE340126CD877900B9551D /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 				FC2D146926B4286F007BC944 /* OutsideScene.swift */,
 				FCE736A126B72C8200C7C71A /* FightScene.swift */,
 				FCCE33FE26C8615100B9551D /* Creature.swift */,
+				FC4FE16526E6AC81007671AD /* Attack.swift */,
 				FCCE33FB26C85E7B00B9551D /* FightState.swift */,
 				FCCE340126CD877900B9551D /* Input.swift */,
 				FCE7369E26B71A0700C7C71A /* GameController.swift */,
@@ -355,6 +359,7 @@
 				FC2D145226B426CD007BC944 /* ContentView.swift in Sources */,
 				FCCE33FF26C8615100B9551D /* Creature.swift in Sources */,
 				FCE7369F26B71A0700C7C71A /* GameController.swift in Sources */,
+				FC4FE16626E6AC81007671AD /* Attack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +378,7 @@
 				FC2D145326B426CD007BC944 /* ContentView.swift in Sources */,
 				FCCE340026C8615100B9551D /* Creature.swift in Sources */,
 				FCE736A026B71A0700C7C71A /* GameController.swift in Sources */,
+				FC4FE16726E6AC81007671AD /* Attack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

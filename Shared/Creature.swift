@@ -13,9 +13,3 @@ struct Creature {
     var health: Int
     var maxHealth: Int
 }
-
-
-struct Attack {
-    var damage: Int
-    var name: String
-}
