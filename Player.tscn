@@ -292,6 +292,7 @@ position = Vector2( 8, 8 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 8, 8 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
