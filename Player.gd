@@ -3,6 +3,9 @@ extends KinematicBody2D
 export var walk_speed = 4.0
 const TILE_SIZE = 16
 
+onready var anim_tree = $AnimationTree
+onready var anim_state = anim_tree.get("parameters/playback")
+
 var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
 var is_moving = false
@@ -17,6 +20,7 @@ var percent_moved_to_next_tile = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	anim_tree.active = true
 	initial_position = position
 	pass # Replace with function body.
 
@@ -24,8 +28,10 @@ func _physics_process(delta):
 	if is_moving == false:
 		process_player_input()
 	elif input_direction != Vector2.ZERO:
+		anim_state.travel("Walk")
 		move(delta)
 	else:
+		anim_state.travel("Idle")
 		is_moving = false
 		
 func process_player_input():
@@ -36,8 +42,12 @@ func process_player_input():
 		
 		
 	if input_direction != Vector2.ZERO:
+		anim_tree.set("parameters/Idle/blend_position", input_direction)
+		anim_tree.set("parameters/Walk/blend_position", input_direction)
 		initial_position = position
 		is_moving = true
+	else:
+		anim_state.travel("Idle")
 		
 		
 func move(delta):
