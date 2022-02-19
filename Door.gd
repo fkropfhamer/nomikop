@@ -15,7 +15,7 @@ func _ready():
 	pass # Replace with function body.
 
 func entered_door():
-	get_node(NodePath("/root/SceneManager")).transition_to_scene(next_scene_path)
+	Utils.get_scene_manager().transition_to_scene(next_scene_path)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

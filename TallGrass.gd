@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	get_node(NodePath("/root/SceneManager")).transition_to_scene(NodePath("res://Battle.tscn"))
+	Utils.transition_to_scene("res://Battle.tscn")
