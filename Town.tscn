@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilesets/gras.png" type="Texture" id=2]
 [ext_resource path="res://assets/tilesets/water.png" type="Texture" id=3]
 [ext_resource path="res://House.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TallGrass.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -172,3 +173,6 @@ tile_data = PoolIntArray( -262154, 0, 65536, -262153, 0, 0, -262152, 0, 65536, -
 
 [node name="House" parent="." instance=ExtResource( 4 )]
 position = Vector2( -112, -48 )
+
+[node name="TallGrass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 64, 32 )
