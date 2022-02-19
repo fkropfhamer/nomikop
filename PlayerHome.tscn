@@ -1,7 +1,58 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/buildings/interiors/player_home.png" type="Texture" id=3]
+[ext_resource path="res://assets/buildings/interiors/door_matt.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 72 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 96, 4 )
 
 [node name="PlayerHome" type="Node2D"]
 
+[node name="Floor" type="TextureRect" parent="."]
+margin_left = -152.0
+margin_top = -80.0
+margin_right = 98.0
+margin_bottom = 170.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Matt" type="TextureRect" parent="."]
+margin_left = -80.0
+margin_top = 48.0
+margin_right = -30.0
+margin_bottom = 98.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( -64, 64 )
+next_scene_path = "res://Town.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -156, -8 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 44, -8 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -56, 68 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -56, -84 )
+shape = SubResource( 2 )

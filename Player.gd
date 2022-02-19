@@ -78,7 +78,7 @@ func move(delta):
 			is_moving = false
 			is_input_stopped = true
 			emit_signal("player_entered_door_signal")
-			$Camera2D.clear_current()
+			#$Camera2D.clear_current()
 			
 		else:
 			position = initial_position + (input_direction * TILE_SIZE * percent_moved_to_next_tile)
