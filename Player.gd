@@ -3,13 +3,19 @@ extends KinematicBody2D
 export var walk_speed = 4.0
 const TILE_SIZE = 16
 
+signal player_entering_door_signal
+signal player_entered_door_signal
+
 onready var anim_tree = $AnimationTree
 onready var anim_state = anim_tree.get("parameters/playback")
-onready var ray = $RayCast2D
+onready var blocking_ray = $BlockingRayCast2D
+onready var door_ray = $DoorRayCast2D
+
 
 var initial_position = Vector2(0,0)
 var input_direction = Vector2(0,0)
 var is_moving = false
+var is_input_stopped = false
 var percent_moved_to_next_tile = 0.0
 
 
@@ -26,6 +32,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	if is_input_stopped:
+		return
+	
 	if is_moving == false:
 		process_player_input()
 	elif input_direction != Vector2.ZERO:
@@ -53,9 +62,29 @@ func process_player_input():
 		
 func move(delta):
 	var desired_step: Vector2 = input_direction * TILE_SIZE / 2
-	ray.cast_to = desired_step
-	ray.force_raycast_update()
-	if !ray.is_colliding():
+	blocking_ray.cast_to = desired_step
+	blocking_ray.force_raycast_update()
+	
+	door_ray.cast_to = desired_step
+	door_ray.force_raycast_update()
+	
+	if door_ray.is_colliding():
+		if percent_moved_to_next_tile == 0.0:
+			emit_signal("player_entering_door_signal")
+		percent_moved_to_next_tile += walk_speed * delta
+		if percent_moved_to_next_tile >= 1.0:
+			position = initial_position + (input_direction * TILE_SIZE)
+			percent_moved_to_next_tile = 0.0
+			is_moving = false
+			is_input_stopped = true
+			emit_signal("player_entered_door_signal")
+			$Camera2D.clear_current()
+			
+		else:
+			position = initial_position + (input_direction * TILE_SIZE * percent_moved_to_next_tile)
+			
+			
+	elif !blocking_ray.is_colliding():
 		percent_moved_to_next_tile += walk_speed * delta
 		if percent_moved_to_next_tile >= 1.0:
 			position = initial_position + (TILE_SIZE * input_direction)
