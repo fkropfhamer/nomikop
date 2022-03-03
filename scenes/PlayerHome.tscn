@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/buildings/interiors/player_home.png" type="Texture" id=3]
 [ext_resource path="res://assets/buildings/interiors/door_matt.png" type="Texture" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 72 )
 
@@ -38,7 +37,7 @@ __meta__ = {
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( -64, 64 )
-next_scene_path = "res://Town.tscn"
+next_scene_path = "res://scenes/Town.tscn"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
