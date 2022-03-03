@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/buildings/interiors/player_home.png" type="Texture" id=3]
 [ext_resource path="res://assets/buildings/interiors/door_matt.png" type="Texture" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 72 )
