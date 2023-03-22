@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMaKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2b")
 
-add_subdirectory(deps/sdl EXCLUDE_FROM_ALL)
+add_subdirectory(deps/SDL EXCLUDE_FROM_ALL)
 
 add_executable(nomikop main.cpp)
 
