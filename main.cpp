@@ -17,22 +17,23 @@ int main() {
             std::cout << SDL_GetError() << "\n";
         }
 
+        SDL_FRect p = { 100, 100, 50, 100 };
+        
         auto running = true;
-        auto i = 0;
         auto flip = true;
         while (running) {
-            i++;
-
             if (flip) {
                 SDL_SetRenderDrawColor(r, 0, 255, 0, 255);    
             } else {
                 SDL_SetRenderDrawColor(r, 0, 0, 255, 255);
             }
-            
-	        SDL_RenderClear(r);
+
+            SDL_RenderClear(r);
+
+            SDL_SetRenderDrawColor(r, 255, 0, 0, 255);
+            SDL_RenderFillRect(r, &p);
 
             SDL_Event event;
-
             while (SDL_PollEvent(&event)) {
                 switch (event.type) {
                     case SDL_EVENT_QUIT:
@@ -41,7 +42,25 @@ int main() {
 
                     case SDL_EVENT_KEY_UP:
                         std::cout << "key\n";
-                        flip = !flip;
+                        if (event.key.keysym.scancode == SDL_SCANCODE_LEFT) {
+                            std::cout << "left\n";
+                            p.x -= 5;
+                        }
+                        if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT) {
+                            std::cout << "right\n";
+                            p.x += 5;
+                        }
+                        if (event.key.keysym.scancode == SDL_SCANCODE_UP) {
+                            std::cout << "up\n";
+                            p.y -= 5;
+                        }
+                        if (event.key.keysym.scancode == SDL_SCANCODE_DOWN) {
+                            p.y += 5;
+                            std::cout << "down\n";
+                        }
+                        if (event.key.keysym.scancode == SDL_SCANCODE_C) {
+                            flip = !flip;
+                        }
                         break;
                 }
             }
