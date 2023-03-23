@@ -3,22 +3,18 @@
 
 
 int main() {
-    std::cout << "Bonjour!\n";
-
     SDL_Init(SDL_INIT_VIDEO);
 
     auto window = SDL_CreateWindow("test", 500, 500, 0);
 
     if (window == NULL) {
         std::cout << "test\n";
-        std::cout << SDL_GetError();
+        std::cout << SDL_GetError() << "\n";
     } else {
-        auto screenSurface = SDL_GetWindowSurface(window);
-
         auto r = SDL_CreateRenderer(window, NULL, 0);
         if (r == NULL) {
             std::cout << "fail\n";
-            std::cout << SDL_GetError();
+            std::cout << SDL_GetError() << "\n";
         }
 
         auto running = true;
