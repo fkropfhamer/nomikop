@@ -1,25 +1,8 @@
 #include <iostream>
-#include <SDL3/SDL.h>
+#include "SDL3/SDL.h"
+#include "Renderer.h"
 
-void renderBackground(SDL_Renderer *renderer, int offSetX, int offSetY) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
-    for (int i = 0; i < 50; i++) {
-        for (int j = 0; j < 50; j++) {
-            int x = offSetX + (i * 25);
-            int y = offSetY + (j * 25);
-            SDL_FRect p = { static_cast<float>(x), static_cast<float>(y), 25, 25 };
-
-            if ((i + j) % 2 == 0) {
-                SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-            } else {
-                SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-            }
-
-            SDL_RenderFillRect(renderer, &p);
-        }
-    }
-}
 
 int main() {
     std::cout << "test\n";
@@ -47,13 +30,13 @@ int main() {
         float pWidth = 25;
         SDL_FRect p = { width / 2 - pWidth , height / 2 - pHeight, pWidth, pHeight };
 
+        auto renderer = Renderer(r);
+
         auto running = true;
         while (running) {
-            SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
+            renderer.clear();
 
-            SDL_RenderClear(r);
-
-            renderBackground(r, -x, -y);
+            renderer.renderBackground(-x, -y);
 
             SDL_SetRenderDrawColor(r, 255, 0, 0, 255);
             SDL_RenderFillRect(r, &p);
@@ -88,8 +71,7 @@ int main() {
                         break;
                 }
             }
-
-            SDL_RenderPresent(r);
+            renderer.present();
             SDL_Delay(20);
         }
     }

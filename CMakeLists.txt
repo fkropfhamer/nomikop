@@ -12,6 +12,6 @@ endif ()
 
 add_subdirectory(deps/SDL EXCLUDE_FROM_ALL)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/Renderer.cpp src/Renderer.h)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)
