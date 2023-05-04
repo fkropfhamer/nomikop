@@ -1,8 +1,6 @@
 #include <iostream>
 #include "SDL3/SDL.h"
-#include "Renderer.h"
-
-
+#include "Renderer.hpp"
 
 int main() {
     std::cout << "test\n";
@@ -28,7 +26,7 @@ int main() {
 
         float pHeight = 40;
         float pWidth = 25;
-        SDL_FRect p = { width / 2 - pWidth , height / 2 - pHeight, pWidth, pHeight };
+        SDL_FRect p = { width / 2 - pWidth / 2 , height / 2 - pHeight / 2, pWidth, pHeight };
 
         auto renderer = Renderer(r);
 

@@ -8,10 +8,12 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2b")
 if(WIN32)
     set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
     set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-endif ()
+endif()
 
 add_subdirectory(deps/SDL EXCLUDE_FROM_ALL)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Renderer.cpp src/Renderer.h)
+include(sources.cmake)
+
+add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)

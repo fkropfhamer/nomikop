@@ -1,5 +1,5 @@
-#ifndef NOMIKOP_RENDERER_H
-#define NOMIKOP_RENDERER_H
+#ifndef NOMIKOP_RENDERER_HPP
+#define NOMIKOP_RENDERER_HPP
 
 
 #include "SDL.h"

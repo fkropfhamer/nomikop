@@ -1,4 +1,4 @@
-#include "Renderer.h"
+#include "Renderer.hpp"
 
 Renderer::Renderer(SDL_Renderer *renderer) {
     this->renderer = renderer;
