@@ -3,27 +3,28 @@
 
 
 int main() {
+    std::cout << "test\n";
     SDL_Init(SDL_INIT_VIDEO);
 
     auto window = SDL_CreateWindow("test", 500, 500, 0);
 
-    if (window == NULL) {
+    if (window == nullptr) {
         std::cout << "test\n";
         std::cout << SDL_GetError() << "\n";
     } else {
-        auto r = SDL_CreateRenderer(window, NULL, 0);
-        if (r == NULL) {
+        auto r = SDL_CreateRenderer(window, nullptr, 0);
+        if (r == nullptr) {
             std::cout << "fail\n";
             std::cout << SDL_GetError() << "\n";
         }
 
         SDL_FRect p = { 100, 100, 50, 100 };
-        
+
         auto running = true;
         auto flip = true;
         while (running) {
             if (flip) {
-                SDL_SetRenderDrawColor(r, 0, 255, 0, 255);    
+                SDL_SetRenderDrawColor(r, 0, 255, 0, 255);
             } else {
                 SDL_SetRenderDrawColor(r, 0, 0, 255, 255);
             }
@@ -67,9 +68,9 @@ int main() {
 
             SDL_RenderPresent(r);
             SDL_Delay(20);
-        }   
+        }
     }
-    
+
     SDL_DestroyWindow(window);
     SDL_Quit();
 
