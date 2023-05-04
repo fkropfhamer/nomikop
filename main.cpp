@@ -1,12 +1,34 @@
 #include <iostream>
 #include <SDL3/SDL.h>
 
+void renderBackground(SDL_Renderer *renderer, int offSetX, int offSetY) {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+
+    for (int i = 0; i < 50; i++) {
+        for (int j = 0; j < 50; j++) {
+            int x = offSetX + (i * 25);
+            int y = offSetY + (j * 25);
+            SDL_FRect p = { static_cast<float>(x), static_cast<float>(y), 25, 25 };
+
+            if ((i + j) % 2 == 0) {
+                SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+            } else {
+                SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+            }
+
+            SDL_RenderFillRect(renderer, &p);
+        }
+    }
+}
 
 int main() {
     std::cout << "test\n";
     SDL_Init(SDL_INIT_VIDEO);
 
-    auto window = SDL_CreateWindow("test", 500, 500, 0);
+    const int width = 500;
+    const int height = 500;
+
+    auto window = SDL_CreateWindow("nomikop", width, height, 0);
 
     if (window == nullptr) {
         std::cout << "test\n";
@@ -18,18 +40,20 @@ int main() {
             std::cout << SDL_GetError() << "\n";
         }
 
-        SDL_FRect p = { 100, 100, 50, 100 };
+        int x = 0;
+        int y = 0;
+
+        float pHeight = 40;
+        float pWidth = 25;
+        SDL_FRect p = { width / 2 - pWidth , height / 2 - pHeight, pWidth, pHeight };
 
         auto running = true;
-        auto flip = true;
         while (running) {
-            if (flip) {
-                SDL_SetRenderDrawColor(r, 0, 255, 0, 255);
-            } else {
-                SDL_SetRenderDrawColor(r, 0, 0, 255, 255);
-            }
+            SDL_SetRenderDrawColor(r, 0, 0, 0, 255);
 
             SDL_RenderClear(r);
+
+            renderBackground(r, -x, -y);
 
             SDL_SetRenderDrawColor(r, 255, 0, 0, 255);
             SDL_RenderFillRect(r, &p);
@@ -45,22 +69,21 @@ int main() {
                         std::cout << "key\n";
                         if (event.key.keysym.scancode == SDL_SCANCODE_LEFT) {
                             std::cout << "left\n";
-                            p.x -= 5;
+                            x -= 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT) {
                             std::cout << "right\n";
-                            p.x += 5;
+                            x += 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_UP) {
                             std::cout << "up\n";
-                            p.y -= 5;
+                            y -= 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_DOWN) {
-                            p.y += 5;
+                            y += 5;
                             std::cout << "down\n";
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_C) {
-                            flip = !flip;
                         }
                         break;
                 }
