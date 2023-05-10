@@ -11,9 +11,12 @@ if(WIN32)
 endif()
 
 add_subdirectory(deps/SDL EXCLUDE_FROM_ALL)
+add_subdirectory(deps/SDL_ttf EXCLUDE_FROM_ALL)
 
 include(sources.cmake)
 
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3)
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3 SDL3_ttf)
+
+file(COPY assets/ DESTINATION assets)
