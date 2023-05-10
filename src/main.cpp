@@ -3,7 +3,6 @@
 #include "Renderer.hpp"
 
 int main() {
-    std::cout << "test\n";
     SDL_Init(SDL_INIT_VIDEO);
 
     const int width = 500;
@@ -12,12 +11,10 @@ int main() {
     auto window = SDL_CreateWindow("nomikop", width, height, 0);
 
     if (window == nullptr) {
-        std::cout << "test\n";
         std::cout << SDL_GetError() << "\n";
     } else {
         auto r = SDL_CreateRenderer(window, nullptr, 0);
         if (r == nullptr) {
-            std::cout << "fail\n";
             std::cout << SDL_GetError() << "\n";
         }
 
@@ -47,7 +44,6 @@ int main() {
                         break;
 
                     case SDL_EVENT_KEY_UP:
-                        std::cout << "key\n";
                         if (event.key.keysym.scancode == SDL_SCANCODE_LEFT) {
                             std::cout << "left\n";
                             x -= 5;
