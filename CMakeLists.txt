@@ -19,4 +19,5 @@ add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL3::SDL3 SDL3_ttf)
 
-file(COPY assets/ DESTINATION assets)
+install(DIRECTORY assets DESTINATION ${CMAKE_BINARY_DIR})
+
