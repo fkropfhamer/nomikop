@@ -1,24 +1,22 @@
-#include <iostream>
+#include <stdio.h>
 #include "SDL3/SDL.h"
-#include "Renderer.hpp"
+#include "render.h"
 
 int main() {
-    std::cout << "test\n";
+    printf("Starting...");
     SDL_Init(SDL_INIT_VIDEO);
 
     const int width = 500;
     const int height = 500;
 
-    auto window = SDL_CreateWindow("nomikop", width, height, 0);
+    SDL_Window* window = SDL_CreateWindow("nomikop", width, height, 0);
 
-    if (window == nullptr) {
-        std::cout << "test\n";
-        std::cout << SDL_GetError() << "\n";
+    if (window == NULL) {
+        printf("%s", SDL_GetError());
     } else {
-        auto r = SDL_CreateRenderer(window, nullptr, 0);
-        if (r == nullptr) {
-            std::cout << "fail\n";
-            std::cout << SDL_GetError() << "\n";
+        SDL_Renderer* r = SDL_CreateRenderer(window, NULL, 0);
+        if (r == NULL) {
+            printf("%s", SDL_GetError());
         }
 
         int x = 0;
@@ -28,13 +26,11 @@ int main() {
         float pWidth = 25;
         SDL_FRect p = { width / 2 - pWidth / 2 , height / 2 - pHeight / 2, pWidth, pHeight };
 
-        auto renderer = Renderer(r);
-
-        auto running = true;
+        int running = 1;
         while (running) {
-            renderer.clear();
+            clear(r);
 
-            renderer.renderBackground(-x, -y);
+            renderBackground(r, -x, -y);
 
             SDL_SetRenderDrawColor(r, 255, 0, 0, 255);
             SDL_RenderFillRect(r, &p);
@@ -43,33 +39,33 @@ int main() {
             while (SDL_PollEvent(&event)) {
                 switch (event.type) {
                     case SDL_EVENT_QUIT:
-                        running = false;
+                        running = 0;
                         break;
 
                     case SDL_EVENT_KEY_UP:
-                        std::cout << "key\n";
+                        printf("key\n");
                         if (event.key.keysym.scancode == SDL_SCANCODE_LEFT) {
-                            std::cout << "left\n";
+                            printf("left\n");
                             x -= 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT) {
-                            std::cout << "right\n";
+                            printf("right\n");
                             x += 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_UP) {
-                            std::cout << "up\n";
+                            printf("up\n");
                             y -= 5;
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_DOWN) {
+                            printf("down\n");
                             y += 5;
-                            std::cout << "down\n";
                         }
                         if (event.key.keysym.scancode == SDL_SCANCODE_C) {
                         }
                         break;
                 }
             }
-            renderer.present();
+            SDL_RenderPresent(r);
             SDL_Delay(20);
         }
     }

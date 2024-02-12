@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
-project(nomikop)
-
-set(CMAKE_CXX_STANDARD 23)
-set(CMaKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2b")
+project(
+    nomikop
+    LANGUAGES C
+    )
 
 if(WIN32)
     set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
