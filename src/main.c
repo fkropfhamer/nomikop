@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "texture.h"
 
 //----------------------------------------------------------------------------------
 // Global Variables Definition
@@ -24,10 +25,7 @@ int main()
     SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
-    Image image = LoadImage("assets/textures/path1.png");  // Load image data into CPU memory (RAM)
-    Texture2D texture = LoadTextureFromImage(image);       // Image converted to texture, GPU memory (RAM -> VRAM)
-    UnloadImage(image);                                    // Unload image data from CPU memory (RAM)
-
+    const Texture2D texture = loadTexture("assets/textures/path1.png");
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
