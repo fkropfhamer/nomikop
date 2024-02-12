@@ -21,6 +21,7 @@ int main()
     //--------------------------------------------------------------------------------------
     InitWindow(screenWidth, screenHeight, "nomikop");
 
+    Vector2 pos = { 0, 0 };
 
     SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -29,11 +30,17 @@ int main()
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
+        if (IsKeyDown(KEY_RIGHT)) pos.x += 2.0f;
+        if (IsKeyDown(KEY_LEFT)) pos.x -= 2.0f;
+        if (IsKeyDown(KEY_UP)) pos.y -= 2.0f;
+        if (IsKeyDown(KEY_DOWN)) pos.y += 2.0f;
+
+
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
 
-            DrawTexture(texture, screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2, WHITE);
+            DrawTexture(texture, screenWidth/2 - texture.width/2 + pos.x, screenHeight/2 - texture.height/2 + pos.y, WHITE);
 
             DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
 
