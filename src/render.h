@@ -1,7 +1,7 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-#include "SDL.h"
+#include <SDL.h>
 
 void clear(SDL_Renderer *renderer);
 
