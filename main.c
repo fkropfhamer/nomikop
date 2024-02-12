@@ -24,10 +24,23 @@ int main()
     SetTargetFPS(60);   // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
+    Image image = LoadImage("assets/textures/path1.png");  // Load image data into CPU memory (RAM)
+    Texture2D texture = LoadTextureFromImage(image);       // Image converted to texture, GPU memory (RAM -> VRAM)
+    UnloadImage(image);                                    // Unload image data from CPU memory (RAM)
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
-        UpdateDrawFrame();
+        BeginDrawing();
+
+            ClearBackground(RAYWHITE);
+
+            DrawTexture(texture, screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2, WHITE);
+
+            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+
+        EndDrawing();
+        // UpdateDrawFrame();
     }
 
 
