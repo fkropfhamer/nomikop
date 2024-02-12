@@ -3,6 +3,9 @@
 
 #include "raylib.h"
 
+extern int screenWidth;
+extern int screenHeight;
+
 enum Screen {
     FIGHT,
     WORLD,
@@ -13,7 +16,9 @@ struct State {
     enum Screen screen;
 };
 
-void loadState(struct State* state);
-void safeState(struct State* state);
+struct State state;
+
+void loadState();
+void safeState();
 
 #endif //STATE_H
